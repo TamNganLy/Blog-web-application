@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs")%>
+
+<div class="creat_main">
+  <h1>Create / Edit</h1>
+  <div>
+    <form 
+    action="<%= locals.id ? `/upload/${id}` : '/upload' %>"  
+    method="POST" 
+    enctype="multipart/form-data">
+      <label for="video">Choose a video:</label>
+      <input 
+      type="file" 
+      name="video" 
+      id="video" 
+      accept="video/*" 
+      <%if (!locals.id) { %>
+      required
+      <% } %>/>
+
+      </br>
+
+      <label for="quote">Quote</label>
+      <textarea 
+        name="quote" 
+        id="quote" 
+        rows="4" 
+        cols="50" 
+        placeholder="Enter your quote here" 
+        required><%if (locals.quote) { %><%= quote %><% } %>
+      </textarea>
+
+      </br>
+
+      <input type="submit" value="Save" />
+      <a href="/" class="button">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs")%>
