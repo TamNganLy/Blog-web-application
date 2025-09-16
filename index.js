@@ -17,13 +17,17 @@ const upload = multer({ dest: "public/videos" });
 
 /*** Home Page ***/
 app.get("/", (req, res) => {
-  // data = JSON.parse(fs.readFileSync("data/data.json"));
-  res.render("index.ejs", {data});
+  res.render("index.ejs", {
+    data,
+    homeActive: true,
+  });
 });
 
 /*** Create Post Page ***/
 app.get("/create", (req, res) => {
-  res.render("create-edit.ejs");
+  res.render("create-edit.ejs", {
+    createActive: true,
+  });
 });
 
 /*** Edit Page ***/

@@ -1,3 +1,38 @@
+:root {
+  --first-color: #683B2B;
+  --second-color: #B08407;
+  --third-color: #D49E8D;
+  --fourth-color: #DED1BD;
+  --fifth-color: #FAF6F2;
+
+  --font: "font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+
+  --bachground-color: var(--fourth-color);
+  --roller-color: var(--second-color);
+  --roller-thumb-color: var(--first-color);
+
+  --hover: var(--third-color);
+
+  --hero-bachground: var(--third-color);
+
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: black;
+  background-color: var(--bachground-color);
+}
+
+p, h1, h2{
+  margin: 0;
+  padding: 0;
+}
+
+.posts {
+  padding: 10px 150px;
 }

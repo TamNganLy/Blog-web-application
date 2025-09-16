@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/style.css">
-  <title>👑 Blog Post</title>
-</head>
-<body>
-  <header>
-    <h2>Tam Blog Post</h2>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/create">Create</a></li>
-    </ul>
-  </header>
-  <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css?v=2" />
+    <link rel="stylesheet" href="style/style-partials.css?v=2" />
+    <title>👑 Blog Post</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="hero">
+        <img src="images/logo.PNG" alt="logo" width="200"/>
+        <h1 class="title">Welcome to My Corner</h1>
+        <a href="/create">Create New Post</a>
+      </div>
+
+      <div class="main">
+        <header>
+          <h2 class="web-name">👑<span class="name">TAM</span>CORNER</h2>
+          <ul class="nav-container">
+            <li class="nav">
+              <a
+                class="<%= locals.homeActive ? 'link active' : 'link' %>"
+                href="/"
+              >
+                HOME
+              </a>
+            </li>
+            <li class="nav">
+              <a
+                class="<%= locals.createActive ? 'link active' : 'link' %>"
+                href="/create"
+              >
+                CREATE
+              </a>
+            </li>
+          </ul>
+        </header>
+        <main>
