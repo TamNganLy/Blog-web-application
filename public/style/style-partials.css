@@ -57,14 +57,43 @@ footer {
 
 .hero {
   flex: 1;
-  background-color: var(--hero-bachground);
-  padding: 10px 100px;
+  padding: 0 75px;
   height: 100vh;
   position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background: linear-gradient(
+      var(--hero-bachground)
+    ),
+    url("/images/background.jpeg");;
+  /* background: url("/images/background.jpeg"); */
+  background-size: 100% 100%, cover;
+}
+
+.hero>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--hero-bachground); */
+  padding: 75px 25px;
+  /* box-shadow: 0 0 100px var(--box-shadow); */
+}
+
+.hero-title {
+  color: var(--hero-text);
+  font-size: 2rem;
+  padding: 15px 0;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  padding: 10px;
+  text-align: center;
+  color: var(--hero-text);
 }
 
 .main {
