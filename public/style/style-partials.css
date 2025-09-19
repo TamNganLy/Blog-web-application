@@ -57,7 +57,7 @@ footer {
 
 .hero {
   flex: 1;
-  padding: 0 75px;
+  padding: 0 50px;
   height: 100vh;
   position: sticky;
   display: flex;
@@ -79,14 +79,15 @@ footer {
   justify-content: center;
   align-items: center;
   /* background-color: var(--hero-bachground); */
-  padding: 75px 25px;
+  padding: 75px 0;
   /* box-shadow: 0 0 100px var(--box-shadow); */
 }
 
 .hero-title {
   color: var(--hero-text);
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 15px 0;
+  text-align: center;
 }
 
 .hero-text {
@@ -107,6 +108,8 @@ footer {
 header {
   flex: 0;
   padding: 10px 150px;
+
+  border-bottom: solid 2px var(--posts-border);
 }
 
 main {

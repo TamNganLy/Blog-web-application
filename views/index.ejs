@@ -3,21 +3,23 @@
 <div class="posts">
   <% data.forEach(post => { %>
   <div class="post">
+    <h3 class="post-title"><%= post.title%></h3>
+    <p class="post-date"><em><%= post.datePost%></em></p>
+    <div class="quote-container">
+      <p><%- post.quote %></p>
+    </div>
     <div class="video-container">
       <video controls>
         <source src="<%= post.video %>?v=<%= Date.now() %>" type="video/mp4">
       </video>
     </div>
-    <div class="quote-container">
-      <div><p><%- post.quote %></p></div>
-      <div class="post-btn-container">
-        <a href="/edit/<%= post.id %>" class="btn primary">&#x1F589;</a>
-        <form 
-          action="/delete/<%= post.id %>" method="POST" 
-          style="display:inline;">
-          <button class="btn primary" type="submit">&#128465;</button>
-        </form>
-      </div>
+    <div class="post-btn-container">
+      <a href="/edit/<%= post.id %>" class="btn primary">&#x1F589;</a>
+      <form 
+      action="/delete/<%= post.id %>" method="POST" 
+      style="display:inline;">
+        <button class="btn primary" type="submit">&#128465;</button>
+      </form>
     </div>
   </div>
   <% }) %>

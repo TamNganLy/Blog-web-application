@@ -36,7 +36,7 @@ app.get("/edit/:id", (req, res) => {
   const editPost = data.find(post => post.id === id);
   let quote = "";
   if (editPost) {
-    quote = editPost.quote;
+    quote = editPost.quote.replace(/<br\s*\/?>/g, '\n');
   };
 
   res.render("create-edit.ejs", {
@@ -55,10 +55,12 @@ app.post("/upload", upload.single("video"), (req, res) => {
   const newPath = path.join("public/videos", videoName);
   fs.renameSync(oldPath, newPath);
 
+  const formattedQuote = req.body.quote.trim().replace(/\r?\n/g, '<br />');
+
   const newPost = {
     id,
     video: `/videos/${videoName}`,
-    quote: req.body.quote
+    quote: formattedQuote
   };
 
   data.push(newPost);
@@ -79,9 +81,11 @@ app.post("/upload/:id", upload.single("video"), (req, res) => {
 
   const post = data[postIndex];
 
+  const formattedQuote = req.body.quote.trim().replace(/\r?\n/g, '<br />');
+
   // Update quote
   if (req.body.quote) {
-    post.quote = req.body.quote.trim();
+    post.quote = formattedQuote;
   }
 
   // If new video uploaded, replace old one
