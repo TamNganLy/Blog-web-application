@@ -88,13 +88,13 @@ footer {
   font-size: 3rem;
   padding: 15px 0;
   text-align: center;
+  font-family: var(--title-font);
 }
 
 .hero-text {
-  font-size: 1.25rem;
   padding: 10px;
   text-align: center;
-  color: var(--hero-text);
+  line-height: 1.5;
 }
 
 .main {
@@ -103,6 +103,7 @@ footer {
   flex-direction: column; /* stack header and main */
   height: 100vh;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 header {
@@ -112,28 +113,46 @@ header {
   border-bottom: solid 2px var(--posts-border);
 }
 
-main {
+/* main {
   flex: 1;
   overflow-y: auto;
-}
+} */
 
 /* Scrollbar styling */
-main::-webkit-scrollbar {
-  width: 10px;
+.main::-webkit-scrollbar {
+  width: 15px;
 }
 
-main::-webkit-scrollbar-track {
+.main::-webkit-scrollbar-track {
   background: var(--bachground-color);
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
-main::-webkit-scrollbar-thumb {
+.main::-webkit-scrollbar-thumb {
   background-color: var(--roller-color);
-  border-radius: 4px;
+  border-radius: 20px;
   border: 2px solid var(--bachground-color);
 }
 
-main::-webkit-scrollbar-thumb:hover {
+.main::-webkit-scrollbar-thumb:hover {
   background-color: var(--roller-thumb-color);
 }
 
+.contact {
+  margin: 10px 0;
+}
+
+.contact>a {
+  margin: 0 25px;
+}
+
+.contact img {
+  width: 20px;
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

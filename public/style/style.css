@@ -30,18 +30,36 @@
 
   --posts-border: var(--third-color);
   --post-date: #444343;
+
+  --title-font: 'Roxborough CF', serif;
+  --text-font: "Lora", serif;
+  /* --text-font: "Sorts Mill Goudy", serif; */
+
+  --text-size: 1.1rem;
+  --title-size: 2.5rem;
+  --button-size: 1.5rem;
+}
+
+@font-face {
+  font-family: 'Roxborough CF';
+  src: url('/font/roxborough-cf-regular.woff2') format('woff2'),
+       url('./assets/font/roxborough-cf-regular.woff') format('woff');
 }
 
 html, body {
   height: 100%;
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: 0;  
 }
 
 body {
   background-color: var(--bachground-color);
+  font-family: var(--text-font);
+  color: var(--hero-text);
+  font-size: var(--text-size);
 }
+
 
 p, h1, h2, h3{
   margin: 0;
@@ -57,11 +75,12 @@ p, h1, h2, h3{
   border: none;
   color: var(--btn-text-color);
   cursor: pointer;
+  font-size: var(--text-size);
 }
 
 .primary {
   background-color: var(--btn-bachground);
-  font-size: 1.5rem;
+  font-size: var(--button-size);
   
   box-sizing: border-box;
   height: 40px;
@@ -85,7 +104,6 @@ p, h1, h2, h3{
   margin: 15px;
   background-color: var(--bachground-color);
   padding: 5px 10px;
-  font-size: 1.25rem;
   border-radius: 10px;
 }
 
@@ -94,19 +112,32 @@ p, h1, h2, h3{
   box-shadow: 2px 2px 4px var(--first-color-opacity);
 }
 
+.third {
+  padding: 10px 20px;
+  background-color: var(--btn-bachground);
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100px;
+  text-align: center;
+}
+
+.third:hover {
+  background-color: var(--btn-bachground-hover);
+  color: var(--bachground-color)
+}
+
 .post {
   display: flex;
   gap: 20px;
   flex-direction: column;
   align-items: center;
   border-bottom: solid 2px var(--posts-border);
-  /* border-radius: 25px; */
-  /* margin: 0 0 20px 0; */
   padding: 50px 175px;
 }
 
 .post-title {
   font-size: 2.5rem;
+  font-size: var(--title-size);
 }
 
 .post-date {
@@ -125,11 +156,50 @@ p, h1, h2, h3{
 .quote-container {
   width: 100%;
   text-align: left;
-  font-family: "Lora", serif;
   font-weight: 500;
   line-height: 2rem;
+  font-family: var(--text-font);
 }
 
 .post-btn-container {
   width: 100%;
+}
+
+
+/******************
+****Create Post**** 
+*******************/
+
+input, textarea{
+  display: block;
+}
+
+.create_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  /* height: 100%; */
+}
+
+.create_main label {
+  display: block;
+  font-size: var(--text-size);
+  margin: 20px 0 5px 0;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: var(--text-size);
+  border: solid 1px var(--posts-border);
+  border-radius: 10px;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
 }

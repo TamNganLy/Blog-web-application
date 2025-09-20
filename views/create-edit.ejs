@@ -1,38 +1,36 @@
 <%- include("partials/header.ejs")%>
 
-<div class="creat_main">
-  <h1>Create / Edit</h1>
-  <div>
+<div class="create_main">
+  <h1><%= locals.id ? "Edit" : "Create" %></h1>
+  <div class="form">
     <form 
     action="<%= locals.id ? `/upload/${id}` : '/upload' %>"  
     method="POST" 
     enctype="multipart/form-data">
-      <label for="video">Choose a video:</label>
-      <input 
-      type="file" 
-      name="video" 
-      id="video" 
-      accept="video/*" 
+      <label for="title">Title</label>
+      <input class="input" type="text" name="title" id="title" required
+      value = "<%= locals.title ? title : '' %>" />
+
+      <label for="datePost">Date</label>
+      <input class="input" type="date" name="datePost" id="datePost" required value="<%= locals.datePost ? datePost : '' %>"  />
+
+      <label for="video">Choose a video</label>
+      <input class="input" type="file" name="video" id="video" accept="video/*" 
       <%if (!locals.id) { %>
       required
       <% } %>/>
 
-      </br>
-
       <label for="quote">Quote</label>
-      <textarea 
-        name="quote" 
-        id="quote" 
-        rows="4" 
-        cols="50" 
+      <textarea class="input" name="quote" id="quote" rows="18" cols="65" 
         placeholder="Enter your quote here" 
-        required><%if (locals.quote) { %><%= quote %><% } %>
+        required>
+        <%= locals.quote ? quote : "" %>
       </textarea>
 
-      </br>
-
-      <input type="submit" value="Save" />
-      <a href="/" class="button">Cancel</a>
+      <div class="form-btn">
+        <input class="btn third" type="submit" value="Save" />
+        <a href="/" class="btn third">Cancel</a>
+      </div>
     </form>
   </div>
 </div>
