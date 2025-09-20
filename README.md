@@ -17,13 +17,13 @@ This project showcases inspirational videos along with quotes. 🎥✨
 
 ## 📸 Screenshot
 - Desktop  
-![Web Screenshot](public/images/screenshot-web.png)
+![Web Screenshot](public/images/Screenshot-web.png)
 
 - Tablet  
-![Tablet Screenshot](public/images/screenshot-Ipad.png)
+![Tablet Screenshot](public/images/Screenshot-Ipad.png)
 
 - Mobile  
-![Mobile Screenshot](public/images/screenshot-mobile.png)
+![Mobile Screenshot](public/images/Screenshot-mobile.png)
 
 ## 🔮 Future Improvements
 - Add database support
