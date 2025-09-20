@@ -19,10 +19,8 @@
   --hover: var(--third-color);
 
   --hero-bachground: var(--third-color-opacity);
-  /* --hero-bachground: var(--first-color-opacity); */
   --hero-text: var(--dark);
 
-  /* --box-shadow: var(--third-color); */
   --btn-bachground: var(--fourth-color);
   --btn-bachground-hover: var(--third-color);
   --btn-bachground-hover-s: var(--second-color);
@@ -33,10 +31,10 @@
 
   --title-font: 'Roxborough CF', serif;
   --text-font: "Lora", serif;
-  /* --text-font: "Sorts Mill Goudy", serif; */
 
   --text-size: 1.1rem;
   --title-size: 2.5rem;
+  --hero-title-size: 3rem;
   --button-size: 1.5rem;
 }
 
@@ -47,8 +45,6 @@
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden;
   margin: 0;
   padding: 0;  
 }
@@ -65,10 +61,6 @@ p, h1, h2, h3{
   margin: 0;
   padding: 0;
 }
-
-/* .posts {
-  padding: 10px 150px;
-} */
 
 .btn {
   text-decoration: none;
@@ -138,6 +130,7 @@ p, h1, h2, h3{
 .post-title {
   font-size: 2.5rem;
   font-size: var(--title-size);
+  text-align: center;
 }
 
 .post-date {
@@ -180,7 +173,6 @@ input, textarea{
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  /* height: 100%; */
 }
 
 .create_main label {

@@ -1,14 +1,7 @@
-header {
-  /* background-color: var(--third-color); */
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  
-}
-
 .web-name {
   color: var(--second-color);
   font-family: var(--font);
+  text-align: center;
 }
 
 .name {
@@ -57,7 +50,7 @@ footer {
 
 .hero {
   flex: 1;
-  padding: 0 50px;
+  padding: 75px 50px;
   height: 100vh;
   position: sticky;
   display: flex;
@@ -69,7 +62,6 @@ footer {
       var(--hero-bachground)
     ),
     url("/images/background.jpeg");;
-  /* background: url("/images/background.jpeg"); */
   background-size: 100% 100%, cover;
 }
 
@@ -78,21 +70,18 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--hero-bachground); */
-  padding: 75px 0;
-  /* box-shadow: 0 0 100px var(--box-shadow); */
 }
 
 .hero-title {
   color: var(--hero-text);
-  font-size: 3rem;
+  font-size: var(--hero-title-size);
   padding: 15px 0;
   text-align: center;
   font-family: var(--title-font);
 }
 
 .hero-text {
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
   line-height: 1.5;
 }
@@ -100,7 +89,7 @@ footer {
 .main {
   flex: 2;
   display: flex;
-  flex-direction: column; /* stack header and main */
+  flex-direction: column;
   height: 100vh;
   box-sizing: border-box;
   overflow-y: auto;
@@ -108,15 +97,13 @@ footer {
 
 header {
   flex: 0;
-  padding: 10px 150px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 175px;
   border-bottom: solid 2px var(--posts-border);
 }
 
-/* main {
-  flex: 1;
-  overflow-y: auto;
-} */
 
 /* Scrollbar styling */
 .main::-webkit-scrollbar {
@@ -155,4 +142,64 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1285px) {
+  header {
+    padding: 10px 75px;
+  }
+
+  .post {
+    padding: 50px 75px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero {
+    position: static;
+    height: auto;
+    padding: 25px 80px;
+  }
+
+  .main {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  header {
+    padding: 10px 80px;
+  }
+
+  .post {
+    padding: 50px 80px;
+  }
+}
+
+@media (max-width: 610px) {
+  :root {
+    --text-size: 1rem;
+    --title-size: 2rem;
+    --hero-title-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 10px 30px;
+  }
+
+  header {
+    padding: 10px 30px;
+  }
+
+  .post {
+    padding: 50px 30px;
+  }
+
+  .web-name {
+    font-size: 1.2rem;
+  }
 }
